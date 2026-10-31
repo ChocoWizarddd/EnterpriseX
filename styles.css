@@ -119,31 +119,6 @@ html[data-theme="dark"] .result-hero strong{color:#ff8188}
 html[data-theme="light"] .language-picker{background:#fff;border-color:#d9dde2;color:#626b76}
 html[data-theme="light"] .language-picker select{color:#252b33}
 @media(max-width:760px){.language-picker{gap:4px;padding:0 6px}.language-picker select{max-width:92px}.search-global{width:min(32vw,160px)}}
-/* Light theme readability: stronger secondary text and larger small labels. */
-html[data-theme="light"] body{font-size:15px}
-html[data-theme="light"] .nav-label,html[data-theme="light"] .brand small,html[data-theme="light"] .demo-card p,html[data-theme="light"] .user-row small{color:#555e69}
-html[data-theme="light"] .nav button{font-size:13px}
-html[data-theme="light"] .crumb{font-size:13px}
-html[data-theme="light"] .search-global{font-size:12px}
-html[data-theme="light"] .page-head p{font-size:12px;color:#525b67}
-html[data-theme="light"] .section-title h2{font-size:14px}
-html[data-theme="light"] .section-title p{font-size:11px;color:#555e69}
-html[data-theme="light"] .stat-card .label{font-size:11px;color:#4d5662}
-html[data-theme="light"] .stat-card .sub{font-size:10px;color:#555e69}
-html[data-theme="light"] .muted,html[data-theme="light"] .business-cell small,html[data-theme="light"] .equipment-info small,html[data-theme="light"] .check-row small,html[data-theme="light"] .metric-row{color:#555e69}
-html[data-theme="light"] .field label{font-size:11px;font-weight:600;color:#4d5662}
-html[data-theme="light"] .field input,html[data-theme="light"] .field select,html[data-theme="light"] .field textarea,html[data-theme="light"] .filters input,html[data-theme="light"] .filters select{font-size:12px}
-html[data-theme="light"] th{font-size:10px;color:#4d5662}
-html[data-theme="light"] td{font-size:11px;color:#414a56}
-html[data-theme="light"] .business-cell strong,html[data-theme="light"] .equipment-info strong,html[data-theme="light"] .check-row strong{font-size:11px}
-html[data-theme="light"] .footnote{font-size:10px;line-height:1.6;color:#555e69}
-html[data-theme="light"] .axis-label{font-size:10px;fill:#555e69}
-html[data-theme="light"] .chart-legend{font-size:10px;color:#4d5662}
-html[data-theme="light"] .result-line,html[data-theme="light"] .metric-row{font-size:11px}
-html[data-theme="light"] .stat-icon{color:#a93641}
-html[data-theme="light"] input::placeholder,html[data-theme="light"] textarea::placeholder{color:#68717d;opacity:1}
-html[data-theme="light"] :focus-visible{outline:2px solid #b72e3b;outline-offset:2px}
-@media(max-width:760px){html[data-theme="light"] .footnote{font-size:10px}html[data-theme="light"] .page-head p{font-size:11px}}
 html[data-theme="dark"] .notice{background:#211b12;border-color:#4d3c24;color:#e1c68c}
 html[data-theme="dark"] .progress{background:#303036}
 html[data-theme="dark"] .progress i{background:#ed4b56}
