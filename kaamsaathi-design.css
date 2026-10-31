@@ -164,3 +164,12 @@ html[data-theme="dark"] .notice{backdrop-filter:blur(24px) saturate(160%);-webki
 
 /* EnterpriseX mark: consistent green glass branding across navigation and browser chrome. */
 html[data-theme="dark"] .brandmark{position:relative;overflow:hidden;isolation:isolate;border:1px solid rgba(227,255,239,.52);background:linear-gradient(145deg,rgba(185,245,209,.75),rgba(36,136,91,.72));color:#103825;box-shadow:inset 0 1px rgba(255,255,255,.65),inset 0 -5px 10px rgba(5,41,28,.18),0 5px 20px rgba(36,192,121,.22);backdrop-filter:blur(14px) saturate(155%);-webkit-backdrop-filter:blur(14px) saturate(155%)}.brandmark img{display:block;width:100%;height:100%;border-radius:inherit;object-fit:cover}.brandmark-mini{display:inline-grid;flex:0 0 23px;width:23px;height:23px;margin-right:2px;border-radius:7px;font-size:11px;vertical-align:middle}
+
+/* The user-provided EnterpriseX script wordmark, framed in matching glass. */
+html[data-theme="dark"] .brand.brand-logo{display:flex;flex-direction:column;align-items:flex-start;gap:5px;padding:2px 5px 24px;color:var(--text);font:inherit;letter-spacing:normal}
+html[data-theme="dark"] .brand-logo-glass{display:flex;align-items:center;justify-content:center;width:100%;max-width:210px;padding:7px 8px;border:1px solid rgba(218,255,235,.26);border-radius:14px;background:linear-gradient(145deg,rgba(226,255,241,.17),rgba(63,105,89,.07) 44%,rgba(10,28,24,.25)),rgba(18,38,32,.18);box-shadow:inset 0 1px rgba(255,255,255,.16),inset 0 -1px rgba(255,255,255,.035),0 7px 22px rgba(15,100,64,.14);backdrop-filter:blur(18px) saturate(175%);-webkit-backdrop-filter:blur(18px) saturate(175%)}
+html[data-theme="dark"] .brand-logo-glass img{display:block;width:100%;height:auto;object-fit:contain;filter:drop-shadow(0 1px 2px rgba(24,108,68,.2))}
+html[data-theme="dark"] .brand-logo-caption{padding-left:8px;color:rgba(202,231,215,.78);font:600 8px/1.2 Inter,sans-serif;letter-spacing:1.7px}
+html[data-theme="dark"] .brand-logo-top{flex:0 0 112px;width:112px;max-width:112px;margin-right:4px;padding:4px 6px;border-radius:9px}
+html[data-theme="dark"] .crumb{display:flex;align-items:center;gap:8px}
+@media(max-width:760px){html[data-theme="dark"] .brand.brand-logo{max-width:210px}.crumb-label{display:none}.crumb .brand-logo-top{flex-basis:82px;width:82px;max-width:82px;margin:0;padding:3px 4px}}
