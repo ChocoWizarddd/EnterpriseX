@@ -173,3 +173,22 @@ html[data-theme="dark"] .brand-logo-caption{padding-left:8px;color:rgba(202,231,
 html[data-theme="dark"] .brand-logo-top{flex:0 0 112px;width:112px;max-width:112px;margin-right:4px;padding:4px 6px;border-radius:9px}
 html[data-theme="dark"] .crumb{display:flex;align-items:center;gap:8px}
 @media(max-width:760px){html[data-theme="dark"] .brand.brand-logo{max-width:210px}.crumb-label{display:none}.crumb .brand-logo-top{flex-basis:82px;width:82px;max-width:82px;margin:0;padding:3px 4px}}
+
+/* Black glass palette with the EnterpriseX green identity retained as its accent. */
+html[data-theme="dark"]{
+  --bg:#080a0b;--panel:#101314;--panel2:#171a1b;--line:#2b3031;--muted:#a2adaa;--text:#f1f5f2;
+  --green-soft:#20352c;--blue-soft:#222d35;--amber-soft:#3b3020;--red-soft:#3b2528;
+  --shadow:0 14px 40px rgba(0,0,0,.34)
+}
+html[data-theme="dark"] .site-background-video{filter:grayscale(.46) saturate(.24) brightness(.5)}
+html[data-theme="dark"] .site-background-shade{background:rgba(5,7,8,.78)}
+html[data-theme="dark"] .sidebar{background:linear-gradient(145deg,rgba(244,250,247,.12),rgba(116,130,124,.045) 34%,rgba(0,0,0,.48) 100%),rgba(7,9,10,.24);border-right-color:rgba(236,245,240,.22);box-shadow:inset 1px 0 0 rgba(255,255,255,.09),inset -1px 0 0 rgba(255,255,255,.1),12px 0 38px rgba(0,0,0,.24)}
+html[data-theme="dark"] .card,html[data-theme="dark"] .insight,html[data-theme="dark"] .result-hero,html[data-theme="dark"] .finance-result,html[data-theme="dark"] .bank-plan,html[data-theme="dark"] .location-card,html[data-theme="dark"] .chat-bubble,html[data-theme="dark"] .voice-panel,html[data-theme="dark"] .modal,html[data-theme="dark"] .mobile-nav,html[data-theme="dark"] .demo-card,html[data-theme="dark"] .bank-emi{
+  border-color:rgba(236,245,240,.14);
+  background:linear-gradient(145deg,rgba(244,250,247,.095),rgba(116,130,124,.035) 34%,rgba(0,0,0,.38) 100%),rgba(9,11,12,.36);
+  box-shadow:inset 1px 1px 0 rgba(255,255,255,.065),inset -1px -1px 0 rgba(255,255,255,.02),0 12px 34px rgba(0,0,0,.28)
+}
+html[data-theme="dark"] .topbar{background:linear-gradient(110deg,rgba(244,250,247,.07),rgba(0,0,0,.44));border-color:rgba(236,245,240,.13)}
+html[data-theme="dark"] .btn,html[data-theme="dark"] .icon-btn,html[data-theme="dark"] .language-picker,html[data-theme="dark"] .search-global,html[data-theme="dark"] .filters input,html[data-theme="dark"] .filters select,html[data-theme="dark"] .field input,html[data-theme="dark"] .field select,html[data-theme="dark"] .field textarea,html[data-theme="dark"] .rate-input input,html[data-theme="dark"] .voice-command-form input,html[data-theme="dark"] .voice-listen,html[data-theme="dark"] .voice-help-toggle,html[data-theme="dark"] .voice-command-form button{background:linear-gradient(145deg,rgba(244,250,247,.085),rgba(0,0,0,.28));border-color:rgba(236,245,240,.17);box-shadow:inset 0 1px rgba(255,255,255,.07)}
+html[data-theme="dark"] .btn.primary{background:linear-gradient(145deg,rgba(226,255,241,.2),rgba(64,157,113,.4));border-color:rgba(157,231,193,.55);color:#effff6}
+html[data-theme="dark"] .brand-logo-glass{background:linear-gradient(145deg,rgba(244,250,247,.11),rgba(116,130,124,.035) 44%,rgba(0,0,0,.35)),rgba(7,9,10,.18);border-color:rgba(236,245,240,.2);box-shadow:inset 0 1px rgba(255,255,255,.13),0 7px 22px rgba(0,0,0,.22)}
