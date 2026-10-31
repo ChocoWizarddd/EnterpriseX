@@ -229,3 +229,7 @@ html[data-theme="dark"] .section-title p,html[data-theme="dark"] .page-head p{fo
 html[data-theme="dark"] .stat-card .label{font-size:12px}
 html[data-theme="dark"] .stat-card .sub{font-size:11px}
 html[data-theme="dark"] .pill{font-size:10px}
+
+/* Keep the supplied logo artwork; remove the surrounding glass treatment. */
+html[data-theme="dark"] .brand-logo-glass,html[data-theme="dark"] .brand-logo-glass.brand-logo-top{padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+html[data-theme="dark"] .brand-logo-glass img{filter:none}
