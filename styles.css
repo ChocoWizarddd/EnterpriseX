@@ -110,6 +110,7 @@ html[data-theme="dark"] .listing-top:after{border-color:#63363b;box-shadow:0 0 0
 html[data-theme="dark"] .result-hero{background:linear-gradient(115deg,#291619,#171417);border-color:#68373c}
 html[data-theme="dark"] .result-hero small,html[data-theme="dark"] .result-hero span{color:#d4a6a9}
 html[data-theme="dark"] .result-hero strong{color:#ff8188}
+.finance-result{height:auto;min-width:0;margin-top:14px}
 html[data-theme="dark"] .notice{background:#211b12;border-color:#4d3c24;color:#e1c68c}
 html[data-theme="dark"] .progress{background:#303036}
 html[data-theme="dark"] .progress i{background:#ed4b56}
