@@ -201,3 +201,31 @@ html[data-theme="dark"] .brand-logo-glass .brand-word img{width:100%;height:auto
 html[data-theme="dark"] .brand-logo-glass.brand-logo-top{display:flex;flex:0 0 32px;width:32px;height:32px;max-width:32px;margin-right:3px;padding:3px;border-radius:9px}
 html[data-theme="dark"] .brand-logo-glass.brand-logo-top img{width:100%;height:100%;object-fit:contain}
 @media(max-width:760px){html[data-theme="dark"] .crumb .brand-logo-glass.brand-logo-top{flex-basis:30px;width:30px;height:30px;max-width:30px;margin:0;padding:2px}}
+
+/* Product finish: use glass as a material cue, with clearer hierarchy for data surfaces. */
+html[data-theme="dark"] .eyebrow{color:#83cfa7;font-size:10px;letter-spacing:1.2px}
+html[data-theme="dark"] .card{
+  border-color:rgba(225,237,230,.11);
+  background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.008)),rgba(17,20,21,.91);
+  backdrop-filter:blur(12px) saturate(125%);
+  -webkit-backdrop-filter:blur(12px) saturate(125%);
+  box-shadow:0 8px 24px rgba(0,0,0,.16),inset 0 1px rgba(255,255,255,.035)
+}
+html[data-theme="dark"] .insight,html[data-theme="dark"] .chat-bubble,html[data-theme="dark"] .result-line{
+  border-color:rgba(225,237,230,.09);
+  background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.008)),rgba(21,24,25,.88);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  box-shadow:inset 0 1px rgba(255,255,255,.035)
+}
+html[data-theme="dark"] .card:hover{border-color:rgba(225,237,230,.16);box-shadow:0 10px 28px rgba(0,0,0,.18),inset 0 1px rgba(255,255,255,.045)}
+html[data-theme="dark"] .eyebrow{color:var(--green)}
+html[data-theme="dark"] .line-a{stroke:#78c99d!important}
+html[data-theme="dark"] .line-b{stroke:#95a6b4!important}
+html[data-theme="dark"] .area-a{opacity:.08}
+html[data-theme="dark"] .gridline{stroke:rgba(203,216,208,.13)}
+html[data-theme="dark"] .section-title h2{font-size:15px}
+html[data-theme="dark"] .section-title p,html[data-theme="dark"] .page-head p{font-size:13px;line-height:1.5}
+html[data-theme="dark"] .stat-card .label{font-size:12px}
+html[data-theme="dark"] .stat-card .sub{font-size:11px}
+html[data-theme="dark"] .pill{font-size:10px}
