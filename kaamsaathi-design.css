@@ -112,3 +112,6 @@ html[data-theme="dark"] .notice{border-color:#6c5532;background:var(--amber-soft
  .stats-grid .stat-card:last-child{grid-column:1/-1}.voice-launcher{width:48px;min-width:48px;height:48px;padding:0;border-radius:99px;font-size:17px;gap:0}.voice-launcher span{display:none}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* Full-screen ambient video backdrop */
+#app{position:relative;z-index:2}.shell,.main{background:transparent!important}.sidebar{background:color-mix(in srgb,var(--panel) 88%,transparent);backdrop-filter:blur(18px)}.site-background-video{position:fixed;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;opacity:.72;filter:saturate(.72) brightness(.9);pointer-events:none}.site-background-shade{position:fixed;inset:0;z-index:1;background:color-mix(in srgb,var(--bg) 72%,transparent);pointer-events:none}@media(prefers-reduced-motion:reduce){.site-background-video{display:none}}
