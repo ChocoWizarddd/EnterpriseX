@@ -115,3 +115,49 @@ html[data-theme="dark"] .notice{border-color:#6c5532;background:var(--amber-soft
 
 /* Full-screen ambient video backdrop */
 #app{position:relative;z-index:2}.shell,.main{background:transparent!important}html[data-theme="dark"] .sidebar{background:linear-gradient(145deg,rgba(226,255,241,.15),rgba(63,105,89,.10) 34%,rgba(10,28,24,.43) 100%),rgba(18,38,32,.2);border-right-color:rgba(226,245,237,.27);backdrop-filter:blur(34px) saturate(180%);-webkit-backdrop-filter:blur(34px) saturate(180%);box-shadow:inset 1px 0 0 rgba(255,255,255,.1),inset -1px 0 0 rgba(255,255,255,.1),12px 0 38px rgba(0,0,0,.1)}html[data-theme="dark"] .sidebar::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,.1),transparent 18%,transparent 88%,rgba(255,255,255,.05))}html[data-theme="dark"] .sidebar .nav button.active{border:1px solid rgba(144,220,190,.3);background:linear-gradient(145deg,rgba(124,206,168,.22),rgba(71,142,111,.12))!important;color:#b6f1d5;box-shadow:inset 0 1px rgba(255,255,255,.16),inset 3px 0 #80d4ae,0 6px 18px rgba(0,0,0,.12);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}html[data-theme="dark"] .sidebar .nav button.active .nav-icon{color:#b6f1d5}.site-background-video{position:fixed;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;opacity:.72;filter:saturate(.72) brightness(.9);pointer-events:none}.site-background-shade{position:fixed;inset:0;z-index:1;background:color-mix(in srgb,var(--bg) 72%,transparent);pointer-events:none}@media(prefers-reduced-motion:reduce){.site-background-video{display:none}}
+
+/* Extend the sidebar's frosted glass material across the full workspace. */
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .insight,
+html[data-theme="dark"] .result-hero,
+html[data-theme="dark"] .finance-result,
+html[data-theme="dark"] .bank-plan,
+html[data-theme="dark"] .location-card,
+html[data-theme="dark"] .chat-bubble,
+html[data-theme="dark"] .voice-panel,
+html[data-theme="dark"] .modal,
+html[data-theme="dark"] .mobile-nav,
+html[data-theme="dark"] .demo-card,
+html[data-theme="dark"] .bank-emi{
+  border-color:rgba(226,245,237,.16);
+  background:linear-gradient(145deg,rgba(226,255,241,.12),rgba(63,105,89,.055) 34%,rgba(10,28,24,.32) 100%),rgba(18,38,32,.28);
+  backdrop-filter:blur(30px) saturate(175%);
+  -webkit-backdrop-filter:blur(30px) saturate(175%);
+  box-shadow:inset 1px 1px 0 rgba(255,255,255,.07),inset -1px -1px 0 rgba(255,255,255,.025),0 12px 34px rgba(0,0,0,.12)
+}
+html[data-theme="dark"] .topbar{background:linear-gradient(110deg,rgba(226,255,241,.09),rgba(18,38,32,.34));border-color:rgba(226,245,237,.14);backdrop-filter:blur(30px) saturate(175%);-webkit-backdrop-filter:blur(30px) saturate(175%)}
+html[data-theme="dark"] .card:hover{border-color:rgba(179,235,207,.26);box-shadow:inset 1px 1px 0 rgba(255,255,255,.09),0 16px 42px rgba(0,0,0,.16)}
+html[data-theme="dark"] .btn,
+html[data-theme="dark"] .icon-btn,
+html[data-theme="dark"] .language-picker,
+html[data-theme="dark"] .search-global,
+html[data-theme="dark"] .filters input,
+html[data-theme="dark"] .filters select,
+html[data-theme="dark"] .field input,
+html[data-theme="dark"] .field select,
+html[data-theme="dark"] .field textarea,
+html[data-theme="dark"] .rate-input input,
+html[data-theme="dark"] .voice-command-form input,
+html[data-theme="dark"] .voice-listen,
+html[data-theme="dark"] .voice-help-toggle,
+html[data-theme="dark"] .voice-command-form button{
+  border-color:rgba(226,245,237,.2);
+  background:linear-gradient(145deg,rgba(226,255,241,.12),rgba(35,70,56,.16));
+  backdrop-filter:blur(18px) saturate(165%);
+  -webkit-backdrop-filter:blur(18px) saturate(165%);
+  box-shadow:inset 0 1px rgba(255,255,255,.08)
+}
+html[data-theme="dark"] .btn{color:var(--text)}
+html[data-theme="dark"] .btn.primary{border-color:rgba(157,231,193,.55);background:linear-gradient(145deg,rgba(226,255,241,.2),rgba(64,157,113,.4));color:#effff6}
+html[data-theme="dark"] .nav button:hover{background:rgba(152,220,185,.1)}
+html[data-theme="dark"] .notice{backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%)}
