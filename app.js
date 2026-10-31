@@ -166,60 +166,25 @@ setupRoute();frame();
 
 function applyFigmaDashboard(){
   const content=document.getElementById('content');
-  if(page!=='dashboard'||!content||content.querySelector('.apogee-hero'))return;
+  if(page!=='dashboard'||!content||content.querySelector('.dashboard-hero'))return;
   const oldHead=content.querySelector('.page-head');
   const stats=content.querySelector(':scope > .stats-grid');
   const originalGrid=content.querySelector(':scope > .grid.two-col');
   if(!oldHead||!stats||!originalGrid)return;
-  const latestRevenue=DATA.revenue.at(-1)*100000;
-  const previousRevenue=DATA.revenue.at(-2)*100000;
-  const growth=((latestRevenue/previousRevenue-1)*100).toFixed(1);
-  const moneyLabel=new Intl.NumberFormat('en-IN',{maximumFractionDigits:0}).format(latestRevenue);
-  const axis=['10:00','12:00','14:00','16:00','16:00'];
-  const barHeights=[23,40,53,40,33,14,7,17,75,65,88,75,65,47,33,88,4,7,9,14,95,65,79,37,7,40,17,20,62,47,92,72];
-  const maxHeight=Math.max(...barHeights);
+  const chart=originalGrid.querySelector('.chart-card');
+  const insights=originalGrid.querySelector('.card:not(.chart-card)');
+  const first=(state.user.name||'there').split(' ')[0];
   const hero=document.createElement('section');
-  hero.className='apogee-hero';
-  hero.innerHTML=`<video class="apogee-video" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260813_092641_de52eb87-daf2-41db-92cb-7a56eae012a5.mp4" autoplay loop muted playsinline aria-hidden="true"></video>
-    <div class="apogee-content"><nav class="apogee-nav" aria-label="EnterpriseX primary navigation">
-      <a class="apogee-brand" href="#dashboard" aria-label="EnterpriseX overview"><svg class="apogee-mark" width="28" height="28" viewBox="0 0 256 256" fill="none" aria-hidden="true"><path fill="currentColor" d="M 256 256 L 178 256 C 150.386 256 128 233.614 128 206 L 128 256 L 0 256 L 0 192 C 0 156.654 28.654 128 64 128 C 99.346 128 128 156.654 128 192 L 128 128 L 256 128 Z M 78 0 C 105.614 0 128 22.386 128 50 L 128 0 L 256 0 L 256 64 C 256 99.346 227.346 128 192 128 C 156.654 128 128 99.346 128 64 L 128 128 L 0 128 L 0 0 Z"/></svg><span>EnterpriseX</span></a>
-      <div class="apogee-links"><button data-page="marketplace">Platform <svg viewBox="0 0 10 10" aria-hidden="true"><path d="m2 3.5 3 3 3-3"/></svg></button><button data-page="matching">Funding</button><button data-page="estimator">Resources</button><button data-page="reports">Reports</button><input class="apogee-search" aria-label="Search businesses" placeholder="⌕  Search" /></div>
-      <div class="apogee-nav-actions"><label class="apogee-language" aria-label="Language"><select class="apogee-language-select" aria-label="Language">${LANGUAGES.map(([id,name])=>`<option value="${id}" ${state.language===id?'selected':''}>${name}</option>`).join('')}</select></label><button class="apogee-theme" type="button" aria-label="Switch theme">${activeTheme==='light'?'◐':'☼'}</button><button class="apogee-notifications" type="button" aria-label="Notifications">♧</button><button class="apogee-login" data-page="settings">Profile</button><button class="apogee-nav-cta" data-page="matching">Plan a business</button></div>
-      <button class="apogee-menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false"><svg class="apogee-menu-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14"/></svg><svg class="apogee-close-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="m4 4 12 12M16 4 4 16"/></svg></button>
-    </nav>
-    <div class="apogee-mobile-backdrop" aria-hidden="true"></div><div class="apogee-mobile-panel" aria-label="Mobile navigation">
-      <form class="apogee-mobile-search"><input aria-label="Search businesses" placeholder="Search businesses, tools…" /><button type="submit" aria-label="Search">⌕</button></form><div class="apogee-mobile-links"><button data-page="marketplace">Platform <span>⌄</span></button><button data-page="matching">Funding</button><button data-page="estimator">Resources</button><button data-page="reports">Reports</button></div><div class="apogee-mobile-divider"></div><div class="apogee-mobile-actions"><button data-page="matching">Plan a business</button><button data-page="settings">Profile</button><button class="apogee-mobile-notifications" type="button">♧ Notifications</button><div class="apogee-mobile-preferences"><label><span>Language</span><select class="apogee-mobile-language" aria-label="Language">${LANGUAGES.map(([id,name])=>`<option value="${id}" ${state.language===id?'selected':''}>${name}</option>`).join('')}</select></label><button class="apogee-mobile-theme" type="button">${activeTheme==='light'?'◐ Dark mode':'☼ Light mode'}</button></div></div>
-    </div>
-    <div class="apogee-main"><div class="apogee-copy">
-      <div class="apogee-eyebrow apogee-animate apogee-down" style="--apogee-delay:0ms">EnterpriseX <span>·</span> BUSINESS INTELLIGENCE</div>
-      <h1 class="apogee-animate apogee-up" style="--apogee-delay:300ms">Elevate your essential data to new heights</h1>
-      <p class="apogee-subhead apogee-animate apogee-up" style="--apogee-delay:500ms">Advanced reasoning systems and predictive models built for the unknown</p>
-      <div class="apogee-ctas apogee-animate apogee-up" style="--apogee-delay:700ms"><button class="apogee-primary-cta" data-page="matching">Book a demo</button><button class="apogee-secondary-cta" data-page="advisor">Talk with the team</button></div>
-    </div>
-    <div class="apogee-revenue apogee-animate apogee-scale" style="--apogee-delay:900ms"><p class="apogee-card-label">Revenue Growth</p><p class="apogee-amount"><span>₹${moneyLabel}</span><span class="apogee-cents">.00</span></p><div class="apogee-delta"><span class="apogee-badge">+${growth}%</span><span class="apogee-caption">vs. previous period (₹${new Intl.NumberFormat('en-IN',{maximumFractionDigits:0}).format(previousRevenue)})</span></div><div class="apogee-chart"><div class="apogee-bars">${barHeights.map((h,i)=>`<i class="apogee-bar ${i>=28?'projected':''}" style="--bar-height:${(h/maxHeight)*100}%;--apogee-delay:${1100+i*30}ms"></i>`).join('')}</div><div class="apogee-gridlines" aria-hidden="true">${[0,1,2,3,4].map(i=>`<i style="left:${((i+1)/5)*100}%"></i>`).join('')}</div><div class="apogee-axis">${axis.map((label,i)=>`<span style="opacity:${i>=3?.4:1}">${label}</span>`).join('')}</div></div><span class="apogee-demo-note">ILLUSTRATIVE SAMPLE DATA</span></div></div></div>`;
+  hero.className='dashboard-hero';
+  hero.innerHTML=`<div class="dashboard-hero-copy"><div class="hero-kicker">EnterpriseX · Business intelligence</div><h1>Your next business <span>starts with intelligence.</span></h1><p>Discover opportunities, understand the investment, and make your next move with a clearer picture of the numbers.</p><div class="hero-actions"><button class="btn primary" data-page="marketplace">▪ Explore opportunities</button><button class="btn" data-page="matching">▪ Plan your investment</button></div></div><div class="hero-product-view"><div class="hero-product-heading"><div><h2>Good morning, ${esc(first)}.</h2><p>Your business workspace is ready to review.</p></div><span class="pill blue">DEMO WORKSPACE</span></div></div>`;
+  const preview=hero.querySelector('.hero-product-view');
+  preview.append(stats);
+  if(chart)preview.append(chart);
+  if(insights)preview.append(insights);
   originalGrid.remove();
-  stats.remove();
-  oldHead.remove();
-  content.closest('.shell')?.classList.add('apogee-home');
-  content.insertBefore(hero,content.firstChild);
+  oldHead.hidden=true;
+  content.insertBefore(hero,oldHead);
   hero.querySelectorAll('[data-page]').forEach(button=>button.addEventListener('click',()=>go(button.dataset.page)));
-  hero.querySelector('.apogee-brand').addEventListener('click',e=>{e.preventDefault();go('dashboard')});
-  const searchBusiness=query=>{marketFilters.search=query.trim();go('marketplace')};
-  hero.querySelector('.apogee-search').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();searchBusiness(e.target.value)}});
-  hero.querySelector('.apogee-mobile-search').addEventListener('submit',e=>{e.preventDefault();searchBusiness(e.currentTarget.querySelector('input').value)});
-  const showNotifications=()=>notify(state.activities.length?`${state.activities.length} recent activity item(s).`:'You are all caught up.');
-  hero.querySelector('.apogee-notifications').addEventListener('click',showNotifications);
-  hero.querySelector('.apogee-mobile-notifications').addEventListener('click',showNotifications);
-  hero.querySelector('.apogee-language-select').addEventListener('change',e=>setLanguage(e.target.value));
-  hero.querySelector('.apogee-mobile-language').addEventListener('change',e=>setLanguage(e.target.value));
-  const toggleTheme=()=>{activeTheme=activeTheme==='light'?'dark':'light';document.documentElement.dataset.theme=activeTheme;localStorage.setItem('enterprisex-theme',activeTheme);hero.querySelector('.apogee-theme').textContent=activeTheme==='light'?'◐':'☼';hero.querySelector('.apogee-theme').setAttribute('aria-label',activeTheme==='light'?'Switch to dark mode':'Switch to light mode');hero.querySelector('.apogee-mobile-theme').textContent=activeTheme==='light'?'◐ Dark mode':'☼ Light mode'};
-  hero.querySelector('.apogee-theme').addEventListener('click',toggleTheme);
-  hero.querySelector('.apogee-mobile-theme').addEventListener('click',toggleTheme);
-  const menuButton=hero.querySelector('.apogee-menu-toggle');
-  const closeMenu=()=>{hero.classList.remove('menu-open');menuButton.setAttribute('aria-expanded','false');document.body.style.overflow=''};
-  menuButton.addEventListener('click',()=>{const open=!hero.classList.contains('menu-open');hero.classList.toggle('menu-open',open);menuButton.setAttribute('aria-expanded',String(open));document.body.style.overflow=open?'hidden':''});
-  hero.querySelector('.apogee-mobile-backdrop').addEventListener('click',closeMenu);
-  hero.querySelectorAll('.apogee-mobile-panel [data-page]').forEach(button=>button.addEventListener('click',closeMenu));
   translateRendered(hero);
 }
 const _renderWithFigmaDashboard=renderPage;
