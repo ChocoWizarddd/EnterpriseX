@@ -111,6 +111,14 @@ html[data-theme="dark"] .result-hero{background:linear-gradient(115deg,#291619,#
 html[data-theme="dark"] .result-hero small,html[data-theme="dark"] .result-hero span{color:#d4a6a9}
 html[data-theme="dark"] .result-hero strong{color:#ff8188}
 .finance-result{height:auto;min-width:0;margin-top:14px}
+/* Compact language switcher stays visible without competing with workspace search. */
+.language-picker{display:flex;align-items:center;gap:6px;height:34px;padding:0 8px;border:1px solid #293746;border-radius:7px;background:var(--panel);color:var(--muted);font-size:12px}
+.language-picker select{max-width:148px;border:0;outline:0;background:transparent;color:var(--text);font-size:11px;cursor:pointer}
+.language-picker option{background:var(--panel);color:var(--text)}
+.language-picker:focus-within{border-color:var(--red);box-shadow:0 0 0 2px color-mix(in srgb,var(--red) 18%,transparent)}
+html[data-theme="light"] .language-picker{background:#fff;border-color:#d9dde2;color:#626b76}
+html[data-theme="light"] .language-picker select{color:#252b33}
+@media(max-width:760px){.language-picker{gap:4px;padding:0 6px}.language-picker select{max-width:92px}.search-global{width:min(32vw,160px)}}
 html[data-theme="dark"] .notice{background:#211b12;border-color:#4d3c24;color:#e1c68c}
 html[data-theme="dark"] .progress{background:#303036}
 html[data-theme="dark"] .progress i{background:#ed4b56}
