@@ -25,6 +25,11 @@ Then open `http://localhost:8000`. User profile changes, saved opportunities, co
 - Equity-first funding match: calculates a project range from available cash, compares editable bank EMI scenarios, and ranks acquisitions and startup categories against illustrative area population and demand profiles.
 - Simulated location comparison with sample catchment populations, contextual demo advisor and risk-aware opportunity matching.
 - CSV exports and browser print-to-PDF report flow.
+- Offline language selector with bundled translations for fixed interface copy and seeded demo descriptions; the selected language is saved in browser storage. No translation requests are made at runtime.
+
+## Language coverage
+
+The selector includes English and all 22 scheduled Indian languages. Bundled phrase catalogs cover the app's fixed interface strings and seeded demo text for languages available from the catalog source. Bodo and Kashmiri have curated navigation and dashboard translations; other phrases in those two languages can fall back to English. Names, user-entered content and numeric values are preserved as entered. Machine-generated translations should be reviewed by fluent speakers before production use.
 
 ## Prototype limits
 
